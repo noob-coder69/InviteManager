@@ -84,7 +84,7 @@ module.exports = async (client, member) => {
             if (userData.invites >= nbInv) {
                 let inviterMember = member.guild.member(usedInvite.inviter.id)
                 if (!inviterMember) return;
-                if (!inviterMember.roles.cache.find(r => r.id === roleID)) {
+                else if (!inviterMember.roles.cache.find(r => r.id === roleID)) {
                     inviterMember.roles.add(member.guild.roles.cache.find(r => r.id === roleID))
                 }
             }
